@@ -23,6 +23,16 @@ ingredients_list = st.multiselect(
      my_dataframe,
      max_selections=5
 )
+
+# Slider for sugar level
+sugar_level = st.slider(
+    'Select your desired sugar level (percentage):',
+    min_value=0,
+    max_value=50,
+    value=25,  # Default value
+    step=1
+)
+
 if ingredients_list:
 
     ingredients_string = ''
@@ -32,8 +42,8 @@ if ingredients_list:
 
     #st.write(ingredients_string)
 
-    my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order)
-            values ('""" + ingredients_string + """','"""+ name_on_order + """')"""
+    my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order,sugar_level)
+            values ('""" + ingredients_string + """','"""+ name_on_order + """','"""+ sugar_level + """')"""
 
     #st.write(my_insert_stmt)
     #st.stop()
