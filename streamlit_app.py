@@ -30,7 +30,7 @@ sugar_level = st.slider(
     min_value=0,
     max_value=50,
     value=25,  # Default value
-    step=1
+    step=5
 )
 
 if ingredients_list:
