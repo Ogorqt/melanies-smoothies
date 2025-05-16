@@ -28,7 +28,7 @@ ingredients_list = st.multiselect(
 sugar_level = st.slider(
     'Select your desired sugar level (percentage):',
     min_value=0,
-    max_value=50,
+    max_value=100,
     value=25,  # Default value
     step=5
 )
